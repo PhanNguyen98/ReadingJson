@@ -41,9 +41,11 @@ extension HomeViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "DetailTableViewCell", for: indexPath) as? DetailTableViewCell else {
             return DetailTableViewCell()
         }
-        cell.nameLabel.text = dataSources[indexPath.row].info?.name
-        cell.birthdayLabel.text = dataSources[indexPath.row].info?.birthday
+        cell.tag = indexPath.row
+        cell.nameLabel.text = dataSources[indexPath.row].info.name
+        cell.birthdayLabel.text = dataSources[indexPath.row].info.birthday
         cell.studentIDLabel.text = dataSources[indexPath.row].studentID
+        cell.loadAvataImage(url: dataSources[indexPath.row].avatar ?? "", index: indexPath.row)
         return cell
     }
     

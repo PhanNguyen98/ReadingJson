@@ -8,12 +8,12 @@
 import Foundation
 
 struct Student: Codable {
-    var info: Info?
+    var info: Info
     var avatar: String?
-    var studentID: String?
+    var studentID: String
     enum CodingKeys: String, CodingKey {
-        case info = "info"
-        case avatar = "avatar"
+        case info
+        case avatar
         case studentID = "student_id"
     }
 }
@@ -21,8 +21,4 @@ struct Student: Codable {
 struct Info: Codable {
     var name: String
     var birthday: String
-    enum CodingKeys: String, CodingKey {
-        case name = "name"
-        case birthday = "birthday"
-    }
 }

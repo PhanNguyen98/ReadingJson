@@ -25,4 +25,20 @@ class DetailTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func loadAvataImage(url: String, index: Int) {
+        let url = URL(string: url)
+        do {
+            if let urls = url {
+                let data = try Data(contentsOf: urls)
+                DispatchQueue.main.async {
+                    if self.tag == index {
+                        self.avatarImageView.image = UIImage(data: data)
+                    }
+                }
+            }
+        } catch {
+            print(error)
+        }
+    }
+    
 }
