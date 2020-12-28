@@ -11,17 +11,25 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    let dataSources = DataManager.shared.studentData
+    var dataSources = [Student]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTableView()
+        setData()
     }
     
     func setUpTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "DetailTableViewCell", bundle: nil), forCellReuseIdentifier: "DetailTableViewCell")
+    }
+    
+    func setData() {
+        dataSources = DataManager.shared.loadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 
 }
@@ -42,9 +50,7 @@ extension HomeViewController: UITableViewDataSource {
             return DetailTableViewCell()
         }
         cell.tag = indexPath.row
-        cell.nameLabel.text = dataSources[indexPath.row].info.name
-        cell.birthdayLabel.text = dataSources[indexPath.row].info.birthday
-        cell.studentIDLabel.text = dataSources[indexPath.row].studentID
+        cell.setContent(item: dataSources[indexPath.row])
         cell.loadAvataImage(url: dataSources[indexPath.row].avatar ?? "", index: indexPath.row)
         return cell
     }

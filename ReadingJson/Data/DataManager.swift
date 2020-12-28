@@ -11,22 +11,17 @@ class DataManager {
     
     static let shared = DataManager()
     
-    var studentData = [Student]()
-    
-    init(){
-        loadData()
-    }
-    
-    func loadData() {
+    func loadData() -> [Student] {
         if let fileLocation = Bundle.main.url(forResource: "data", withExtension: "json") {
             do {
                 let data = try Data(contentsOf: fileLocation)
                 let jsonDecoder = JSONDecoder()
                 let dataFromJson = try jsonDecoder.decode([Student].self, from: data)
-                self.studentData = dataFromJson
+                return dataFromJson
             } catch {
                 print(error)
             }
         }
+        return [Student]()
     }
 }

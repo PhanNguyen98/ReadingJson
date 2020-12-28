@@ -28,8 +28,8 @@ class DetailTableViewCell: UITableViewCell {
     func loadAvataImage(url: String, index: Int) {
         let url = URL(string: url)
         do {
-            if let urls = url {
-                let data = try Data(contentsOf: urls)
+            if let urlData = url {
+                let data = try Data(contentsOf: urlData)
                 DispatchQueue.main.async {
                     if self.tag == index {
                         self.avatarImageView.image = UIImage(data: data)
@@ -39,6 +39,12 @@ class DetailTableViewCell: UITableViewCell {
         } catch {
             print(error)
         }
+    }
+    
+    func setContent(item: Student) {
+        nameLabel.text = item.info.name
+        birthdayLabel.text = item.info.birthday
+        studentIDLabel.text = item.studentID
     }
     
 }
