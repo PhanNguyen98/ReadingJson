@@ -11,7 +11,7 @@ class HomeViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    let dataSources = DataLoader().studentData
+    let dataSources = DataManager.shared.studentData
     
     override func viewDidLoad() {
         super.viewDidLoad()

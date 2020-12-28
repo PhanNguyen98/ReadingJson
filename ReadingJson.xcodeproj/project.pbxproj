@@ -32,7 +32,7 @@
 		D5246B212599917000CDF7C0 /* DetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
 		D5246B26259992F000CDF7C0 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		D5246B2A2599930300CDF7C0 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		D5246B2D2599931500CDF7C0 /* data.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = data.geojson; sourceTree = "<group>"; };
+		D5246B2D2599931500CDF7C0 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,10 +65,10 @@
 		D5246B0025998FED00CDF7C0 /* ReadingJson */ = {
 			isa = PBXGroup;
 			children = (
-				D5246B25259992DA00CDF7C0 /* Data */,
-				D5246B182599902600CDF7C0 /* Home */,
 				D5246B0125998FED00CDF7C0 /* AppDelegate.swift */,
 				D5246B0325998FED00CDF7C0 /* SceneDelegate.swift */,
+				D5246B25259992DA00CDF7C0 /* Data */,
+				D5246B182599902600CDF7C0 /* Home */,
 				D5246B0A25998FEE00CDF7C0 /* Assets.xcassets */,
 				D5246B0C25998FEE00CDF7C0 /* LaunchScreen.storyboard */,
 				D5246B0F25998FEE00CDF7C0 /* Info.plist */,
@@ -108,7 +108,7 @@
 			children = (
 				D5246B26259992F000CDF7C0 /* Student.swift */,
 				D5246B2A2599930300CDF7C0 /* DataManager.swift */,
-				D5246B2D2599931500CDF7C0 /* data.geojson */,
+				D5246B2D2599931500CDF7C0 /* data.json */,
 			);
 			path = Data;
 			sourceTree = "<group>";

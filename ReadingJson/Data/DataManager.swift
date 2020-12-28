@@ -7,7 +7,9 @@
 
 import Foundation
 
-class DataLoader {
+class DataManager {
+    
+    static let shared = DataManager()
     
     var studentData = [Student]()
     
@@ -16,7 +18,7 @@ class DataLoader {
     }
     
     func loadData() {
-        if let fileLocation = Bundle.main.url(forResource: "data", withExtension: "geojson") {
+        if let fileLocation = Bundle.main.url(forResource: "data", withExtension: "json") {
             do {
                 let data = try Data(contentsOf: fileLocation)
                 let jsonDecoder = JSONDecoder()
